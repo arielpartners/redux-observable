@@ -13,7 +13,7 @@ import {Provider} from 'react-redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {persistStore} from 'redux-persist';
-import configureStore from './store/configureStore';
+import configureStore from './store';
 
 import UserSearch from './containers/user-search';
 import ReposByUser from './containers/repos-by-user';
