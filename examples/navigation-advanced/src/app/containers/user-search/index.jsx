@@ -54,11 +54,14 @@ class UserSearch extends React.Component {
     }
 }
 
-export default connect(
-    ({routing, userResults, searchInFlight}) => ({
-        query: routing.locationBeforeTransitions.query.q,
-        results: userResults,
-        searchInFlight
-    }),
-    {searchUsers}
-)(UserSearch);
+/* istanbul ignore next  */
+const mapStateToProps = ({routing, userResults, searchInFlight}) =>  ({ // from reducers
+    query: routing.locationBeforeTransitions.query.q,
+    results: userResults,
+    searchInFlight
+});
+
+const mapDispatchToProps = {searchUsers};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserSearch);
+

@@ -10,17 +10,23 @@ import 'rxjs';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import {createHistory, useBasename} from 'history';
+import {Router, Route, IndexRoute, useRouterHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {persistStore} from 'redux-persist';
 import configureStore from './store';
 
+// Containers
 import UserSearch from './containers/user-search';
 import ReposByUser from './containers/repos-by-user';
 import Admin from './containers/admin';
 
 const store = configureStore();
 persistStore(store, {blacklist: ['error', 'routing']});
+
+const browserHistory = useRouterHistory(useBasename(createHistory))({
+    basename: ''
+});
 
 const history = syncHistoryWithStore(
     browserHistory,
