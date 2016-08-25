@@ -91,6 +91,7 @@ module.exports = (function makeWebpackConfig() {
      */
     config.output = isTestEnv ? {} : {
         path: root('dist'),
+        // If not set to '/' hot-loading and deep-linking will fail for nested routes
         publicPath: '/',
         filename: ENV === 'build' ? 'js/[name].[hash].js' : 'js/[name].js',
         chunkFilename: ENV === 'build' ? '[id].[hash].chunk.js' : '[id].chunk.js'

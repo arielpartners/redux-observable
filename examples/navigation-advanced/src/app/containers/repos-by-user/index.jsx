@@ -26,17 +26,15 @@ class ReposByUser extends React.Component {
             );
         }
         return (
-            <Repos
-                repos={reposByUser[user]}
-                user={user}
-            />
+            <Repos repos={reposByUser[user]}
+                   user={user}/>
         );
     }
 }
 
 export default connect(
     // Map State to Props (Reducers/ownProps)
-    ({reposByUser}, ownProps) =>  ({ // from reducers/ownprops
+    ({reposByUser}, ownProps) => ({ // from reducers/ownprops
         reposByUser,
         user: ownProps.params.user
     }),
