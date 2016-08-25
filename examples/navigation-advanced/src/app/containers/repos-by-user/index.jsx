@@ -34,12 +34,13 @@ class ReposByUser extends React.Component {
     }
 }
 
-/* istanbul ignore next  */
-const mapStateToProps = ({reposByUser}, ownProps) =>  ({ // from reducers/ownprops
-    reposByUser,
-    user: ownProps.params.user
-});
+export default connect(
+    // Map State to Props (Reducers/ownProps)
+    ({reposByUser}, ownProps) =>  ({ // from reducers/ownprops
+        reposByUser,
+        user: ownProps.params.user
+    }),
+    // Map DispatchToProps (Actions)
+    {requestReposByUser}
+)(ReposByUser);
 
-const mapDispatchToProps = {requestReposByUser};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ReposByUser);

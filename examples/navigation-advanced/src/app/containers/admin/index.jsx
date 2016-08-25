@@ -27,8 +27,8 @@ class Admin extends React.Component {
 }
 
 export default connect(
-    // Map State to Props
+    // Map State to Props (Reducers)
     ({adminAccess}) => ({adminAccess}),
-    // Map DispatchToProps
+    // Map DispatchToProps (Actions)
     {checkAdminAccess}
 )(Admin);
