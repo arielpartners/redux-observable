@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arielpartners/highfive-client.git"
+    "url": "git+https://github.com/arielpartners/redux-observable.git"
   },
   "author": "Charles Fulnecky",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arielpartners/highfive-client/issues"
+    "url": "https://github.com/arielpartners/redux-observable/issues"
   },
-  "homepage": "https://github.com/arielpartners/highfive-client#readme",
+  "homepage": "https://github.com/arielpartners/redux-observable#readme",
   "dependencies": {
     "history": "^2.1.2",
     "react": "^15.3.1",
