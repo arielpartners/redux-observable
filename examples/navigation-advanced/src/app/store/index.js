@@ -26,13 +26,13 @@ export default function configureStore() {
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
         module.hot.accept('../reducers', () => {
-            const nextReducer = require('../epics').default;
+            const nextReducer = require('../reducers').default;
             store.replaceReducer(nextReducer);
         });
         // Enable Webpack hot module replacement for epics
         module.hot.accept('../epics', () => {
             const nextEpic = require('../epics').default;
-            store.replaceEpic(nextEpic);
+            epicMiddleware.replaceEpic(nextEpic);
         });
     }
 

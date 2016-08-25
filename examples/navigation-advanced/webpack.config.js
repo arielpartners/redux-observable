@@ -91,8 +91,8 @@ module.exports = (function makeWebpackConfig() {
      */
     config.output = isTestEnv ? {} : {
         path: root('dist'),
-        publicPath: '',
-        filename: ENV === 'build' ? '/js/[name].[hash].js' : '/js/[name].js',
+        publicPath: '/',
+        filename: ENV === 'build' ? 'js/[name].[hash].js' : 'js/[name].js',
         chunkFilename: ENV === 'build' ? '[id].[hash].chunk.js' : '[id].chunk.js'
     };
 
@@ -212,12 +212,12 @@ module.exports = (function makeWebpackConfig() {
             // Reference: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
             new CommonsChunkPlugin({
                 name: 'vendor',
-                filename: ENV === 'build' ? '/js/[name].[hash].js' : '/js/[name].js',
+                filename: ENV === 'build' ? 'js/[name].[hash].js' : 'js/[name].js',
                 minChunks: Infinity
             }),
             new CommonsChunkPlugin({
                 name: 'common',
-                filename: ENV === 'build' ? '/js/[name].[hash].js' : '/js/[name].js',
+                filename: ENV === 'build' ? 'js/[name].[hash].js' : 'js/[name].js',
                 minChunks: 2,
                 chunks: ['app', 'vendor']
             }),

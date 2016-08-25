@@ -9,8 +9,8 @@ class ReposByUser extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const {user} = this.props.params;
-        if (user !== nextProps.params.user) {
+        const {user} = this.props;
+        if (user !== nextProps.user) {
             this.props.requestReposByUser(user);
         }
     }
@@ -22,7 +22,7 @@ class ReposByUser extends React.Component {
         } = this.props;
         if (!reposByUser[user]) {
             return (
-                <p>Loading</p>
+                <p>Loading!!</p>
             );
         }
         return (
