@@ -1,0 +1,43 @@
+//Fix Material Design rendering inputs as invalid before interaction
+form {
+  .mdl-textfield__label {
+    color: inherit;
+  }
+  &:not(.invalid) {
+
+    .mdl-textfield.is-invalid {
+      input:invalid, textarea:invalid {
+        border-color: rgba(0,0,0, 0.12);
+        &:focus {
+          border-color: rgb(63, 81, 181);
+        }
+      }
+
+      .mdl-textfield__error {
+        visibility: hidden;
+      }
+
+      &.is-focused  {
+        .mdl-textfield__label {
+          font-size: 12px;
+          color: orange;
+          &:after {
+            background-color: orange;
+          }
+        };
+        .mdl-textfield__error {
+          visibility: visible;
+          color: grey;
+        }
+      }
+
+      .mdl-textfield__label {
+        color: inherit;
+        font-size: inherit;
+        &:after {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+}
